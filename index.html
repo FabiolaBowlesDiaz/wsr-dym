@@ -1,0 +1,1214 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="description" content="Weekly Sales Report - DYM Bolivia - Septiembre 2025">
+    <meta name="theme-color" content="#1e3a8a">
+    <title>WSR DYM - Septiembre 2025 - Semana 3</title>
+    
+    <!-- Favicon opcional -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        .container {
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 15px;
+            background: white;
+        }
+        
+        /* Header mejorado para móvil */
+        .main-header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3730a3 100%);
+            color: white;
+            padding: 20px;
+            margin: -15px -15px 20px -15px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .main-header h1 {
+            font-size: clamp(1.5rem, 5vw, 2.5rem);
+            margin-bottom: 10px;
+            border: none;
+        }
+        
+        .header-info {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+        
+        .header-info p {
+            margin: 5px 0;
+            font-size: 14px;
+            opacity: 0.95;
+        }
+        
+        /* Navegación móvil */
+        .mobile-nav {
+            display: none;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: white;
+            border-bottom: 2px solid #e5e7eb;
+            margin: 0 -15px 20px -15px;
+            padding: 10px 15px;
+            overflow-x: auto;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        .mobile-nav button {
+            display: inline-block;
+            padding: 8px 16px;
+            margin-right: 10px;
+            background: #f3f4f6;
+            border: 1px solid #d1d5db;
+            border-radius: 20px;
+            font-size: 14px;
+            color: #374151;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .mobile-nav button.active {
+            background: #1e3a8a;
+            color: white;
+            border-color: #1e3a8a;
+        }
+        
+        h2 {
+            color: #1e3a8a;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            padding: 12px;
+            background: linear-gradient(90deg, #e0f2fe 0%, #f0f9ff 100%);
+            border-left: 4px solid #1e3a8a;
+            font-size: clamp(1.2rem, 4vw, 1.5rem);
+        }
+        
+        h3 {
+            color: #1e3a8a;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: clamp(1rem, 3vw, 1.2rem);
+        }
+        
+        /* Tablas optimizadas para móvil */
+        .table-wrapper {
+            width: 100%;
+            overflow-x: auto;
+            margin-bottom: 30px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            -webkit-overflow-scrolling: touch;
+            position: relative;
+        }
+        
+        /* Indicador de scroll para móvil */
+        .table-wrapper::after {
+            content: '→ Desliza para ver más';
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #1e3a8a;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 11px;
+            opacity: 0;
+            animation: fadeInOut 3s ease-in-out;
+            pointer-events: none;
+        }
+        
+        @keyframes fadeInOut {
+            0%, 100% { opacity: 0; }
+            20%, 80% { opacity: 1; }
+        }
+        
+        table {
+            width: 100%;
+            min-width: 800px;
+            border-collapse: collapse;
+            font-size: 12px;
+        }
+        
+        th {
+            background: linear-gradient(180deg, #1e3a8a 0%, #1e40af 100%);
+            color: white;
+            padding: 10px 8px;
+            text-align: right;
+            white-space: nowrap;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            font-weight: 600;
+        }
+        
+        th:first-child {
+            text-align: left;
+            position: sticky;
+            left: 0;
+            z-index: 11;
+            background: linear-gradient(180deg, #1e3a8a 0%, #1e40af 100%);
+            min-width: 120px;
+        }
+        
+        td {
+            padding: 8px;
+            border-bottom: 1px solid #e5e7eb;
+            text-align: right;
+            white-space: nowrap;
+        }
+        
+        td:first-child {
+            text-align: left;
+            font-weight: 500;
+            position: sticky;
+            left: 0;
+            background: white;
+            z-index: 1;
+            border-right: 1px solid #e5e7eb;
+            min-width: 120px;
+        }
+        
+        tr:hover {
+            background: #f9fafb;
+        }
+        
+        tr:last-child td {
+            border-bottom: none;
+        }
+        
+        tr.total-row {
+            font-weight: bold;
+            background: linear-gradient(90deg, #f0f9ff 0%, #e0f2fe 100%) !important;
+            border-top: 2px solid #1e3a8a;
+        }
+        
+        tr.total-row td {
+            padding: 10px 8px;
+        }
+        
+        /* Colores mejorados */
+        .positive {
+            color: #059669;
+            font-weight: 600;
+        }
+        
+        .negative {
+            color: #dc2626;
+            font-weight: 600;
+        }
+        
+        .neutral {
+            color: #6b7280;
+        }
+        
+        .warning {
+            color: #f59e0b;
+            font-weight: 600;
+        }
+        
+        /* Cards del resumen ejecutivo - Mejorado para móvil */
+        .executive-summary {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .summary-card {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 15px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .summary-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .summary-card h4 {
+            color: #1e3a8a;
+            margin-bottom: 8px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+        
+        .summary-card .value {
+            font-size: clamp(1.5rem, 4vw, 2rem);
+            font-weight: bold;
+            margin-bottom: 4px;
+        }
+        
+        .summary-card .description {
+            font-size: 11px;
+            color: #6b7280;
+            line-height: 1.4;
+        }
+        
+        /* Alertas mejoradas */
+        .alert-box {
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 12px;
+            border-left: 4px solid;
+        }
+        
+        .alert-critical {
+            background: linear-gradient(90deg, #fee2e2 0%, #fecaca 100%);
+            border-color: #dc2626;
+            color: #991b1b;
+        }
+        
+        .alert-warning {
+            background: linear-gradient(90deg, #fef3c7 0%, #fde68a 100%);
+            border-color: #f59e0b;
+            color: #92400e;
+        }
+        
+        .alert-success {
+            background: linear-gradient(90deg, #dcfce7 0%, #bbf7d0 100%);
+            border-color: #22c55e;
+            color: #166534;
+        }
+        
+        .alert-info {
+            background: linear-gradient(90deg, #e0f2fe 0%, #bae6fd 100%);
+            border-color: #0284c7;
+            color: #075985;
+        }
+        
+        .alert-box h4 {
+            margin-bottom: 10px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        
+        .alert-box ul {
+            margin-left: 20px;
+            font-size: 13px;
+        }
+        
+        .alert-box li {
+            margin: 6px 0;
+            line-height: 1.5;
+        }
+        
+        /* Footer mejorado */
+        .footnotes {
+            margin-top: 40px;
+            padding: 20px;
+            background: linear-gradient(180deg, #f9fafb 0%, #f3f4f6 100%);
+            border-top: 2px solid #e5e7eb;
+            font-size: 12px;
+            color: #6b7280;
+        }
+        
+        .footnotes h4 {
+            color: #4b5563;
+            margin-bottom: 10px;
+            font-size: 13px;
+        }
+        
+        .footnotes ul {
+            margin-left: 20px;
+        }
+        
+        .footnotes li {
+            margin: 5px 0;
+            line-height: 1.5;
+        }
+        
+        /* Botón de compartir para móvil */
+        .share-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, #1e3a8a 0%, #3730a3 100%);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 56px;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            cursor: pointer;
+            z-index: 1000;
+            transition: transform 0.2s;
+        }
+        
+        .share-button:hover {
+            transform: scale(1.1);
+        }
+        
+        .share-button svg {
+            width: 24px;
+            height: 24px;
+        }
+        
+        /* Responsive para móvil */
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .main-header {
+                margin: -10px -10px 15px -10px;
+                padding: 15px;
+            }
+            
+            .mobile-nav {
+                display: block;
+            }
+            
+            table {
+                font-size: 11px;
+                min-width: 700px;
+            }
+            
+            th, td {
+                padding: 6px 5px;
+            }
+            
+            .executive-summary {
+                grid-template-columns: 1fr 1fr;
+                gap: 10px;
+            }
+            
+            h2 {
+                font-size: 1.3rem;
+                padding: 10px;
+                margin-top: 25px;
+            }
+            
+            h3 {
+                font-size: 1.1rem;
+            }
+            
+            .alert-box {
+                padding: 12px;
+                font-size: 12px;
+            }
+            
+            .table-wrapper::after {
+                display: block;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .executive-summary {
+                grid-template-columns: 1fr;
+            }
+            
+            .summary-card {
+                padding: 12px;
+            }
+            
+            table {
+                font-size: 10px;
+                min-width: 600px;
+            }
+        }
+        
+        /* Modo oscuro automático */
+        @media (prefers-color-scheme: dark) {
+            body {
+                background: #111827;
+                color: #f3f4f6;
+            }
+            
+            .container {
+                background: #1f2937;
+            }
+            
+            .table-wrapper {
+                background: #1f2937;
+                border-color: #374151;
+            }
+            
+            td {
+                border-color: #374151;
+            }
+            
+            td:first-child {
+                background: #1f2937;
+                border-color: #374151;
+            }
+            
+            tr:hover {
+                background: #374151;
+            }
+            
+            .summary-card {
+                background: #1f2937;
+                border-color: #374151;
+            }
+            
+            h2 {
+                background: linear-gradient(90deg, #1e3a8a 0%, #1e40af 100%);
+                color: white;
+            }
+        }
+        
+        /* Impresión optimizada */
+        @media print {
+            body {
+                background: white;
+            }
+            
+            .container {
+                padding: 0;
+            }
+            
+            .main-header {
+                background: none;
+                color: black;
+                border-bottom: 2px solid black;
+            }
+            
+            .share-button,
+            .mobile-nav {
+                display: none !important;
+            }
+            
+            .table-wrapper {
+                overflow: visible;
+                box-shadow: none;
+                border: 1px solid #000;
+                page-break-inside: avoid;
+            }
+            
+            table {
+                font-size: 9px;
+            }
+            
+            h2 {
+                page-break-before: always;
+                page-break-after: avoid;
+            }
+            
+            h2:first-of-type {
+                page-break-before: avoid;
+            }
+            
+            @page {
+                size: landscape;
+                margin: 10mm;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="main-header">
+            <h1>📊 WEEKLY SALES REPORT - DYM</h1>
+            <div class="header-info">
+                <p><strong>📅 Período:</strong> Semana 3 de Septiembre 2025</p>
+                <p><strong>📆 Fecha de generación:</strong> 15/09/2025</p>
+                <p><strong>💱 Tipo de cambio:</strong> 6.96 BOB/USD</p>
+            </div>
+        </div>
+
+        <!-- Navegación móvil -->
+        <div class="mobile-nav">
+            <button onclick="scrollToSection('marcas')" class="active">Marcas</button>
+            <button onclick="scrollToSection('ciudades')">Ciudades</button>
+            <button onclick="scrollToSection('canales')">Canales</button>
+            <button onclick="scrollToSection('stock')">Stock</button>
+            <button onclick="scrollToSection('resumen')">Resumen</button>
+        </div>
+
+        <h2 id="marcas">1. PERFORMANCE POR MARCA</h2>
+        
+        <h3>PERFORMANCE POR MARCA - BOB</h3>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Marca</th>
+                        <th>Vendido 2024</th>
+                        <th>Ppto General</th>
+                        <th>SOP</th>
+                        <th>Avance 2025</th>
+                        <th>PY 2025</th>
+                        <th>AV25/PG</th>
+                        <th>AV25/SOP</th>
+                        <th>PY25/V24</th>
+                        <th>Stock C9L</th>
+                        <th>Cobert.</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>CASA REAL</td>
+                        <td>7,720,772</td>
+                        <td>7,842,132</td>
+                        <td>6,388,156</td>
+                        <td>4,094,652</td>
+                        <td>5,081,462</td>
+                        <td class="negative">-48%</td>
+                        <td class="negative">-36%</td>
+                        <td class="negative">-34%</td>
+                        <td>25,665</td>
+                        <td class="positive">30d</td>
+                    </tr>
+                    <tr>
+                        <td>HAVANA</td>
+                        <td>3,712,337</td>
+                        <td>4,787,726</td>
+                        <td>4,578,866</td>
+                        <td>1,845,481</td>
+                        <td>3,456,866</td>
+                        <td class="negative">-61%</td>
+                        <td class="negative">-60%</td>
+                        <td class="negative">-7%</td>
+                        <td>23,381</td>
+                        <td class="warning">179d</td>
+                    </tr>
+                    <tr>
+                        <td>BRANCA</td>
+                        <td>3,705,605</td>
+                        <td>4,614,669</td>
+                        <td>7,376,813</td>
+                        <td>1,756,070</td>
+                        <td>5,364,369</td>
+                        <td class="negative">-62%</td>
+                        <td class="negative">-76%</td>
+                        <td class="positive">+45%</td>
+                        <td>31,652</td>
+                        <td class="warning">230d</td>
+                    </tr>
+                    <tr>
+                        <td>CAMPOS DE SOLANA</td>
+                        <td>2,879,634</td>
+                        <td>2,925,807</td>
+                        <td>3,114,343</td>
+                        <td>1,906,731</td>
+                        <td>2,404,093</td>
+                        <td class="negative">-35%</td>
+                        <td class="negative">-39%</td>
+                        <td class="negative">-17%</td>
+                        <td>16,944</td>
+                        <td class="positive">31d</td>
+                    </tr>
+                    <tr>
+                        <td>REDBULL</td>
+                        <td>344,089</td>
+                        <td>-</td>
+                        <td>2,366,402</td>
+                        <td>1,324,287</td>
+                        <td>1,649,735</td>
+                        <td class="neutral">N/A</td>
+                        <td class="negative">-44%</td>
+                        <td class="positive">+379%</td>
+                        <td>5,812</td>
+                        <td class="positive">28d</td>
+                    </tr>
+                    <tr>
+                        <td>37 LENGUAS</td>
+                        <td>183,657</td>
+                        <td>830,073</td>
+                        <td>2,026,337</td>
+                        <td>988,088</td>
+                        <td>1,345,006</td>
+                        <td class="positive">+19%</td>
+                        <td class="negative">-51%</td>
+                        <td class="positive">+632%</td>
+                        <td>2,183</td>
+                        <td class="negative">20d</td>
+                    </tr>
+                    <tr>
+                        <td>DON LUCHO</td>
+                        <td>801,268</td>
+                        <td>771,324</td>
+                        <td>636,992</td>
+                        <td>378,664</td>
+                        <td>506,108</td>
+                        <td class="negative">-51%</td>
+                        <td class="negative">-41%</td>
+                        <td class="negative">-37%</td>
+                        <td>1,233</td>
+                        <td class="warning">84d</td>
+                    </tr>
+                    <tr>
+                        <td>CHIVAS</td>
+                        <td>721,659</td>
+                        <td>765,426</td>
+                        <td>793,780</td>
+                        <td>459,400</td>
+                        <td>654,096</td>
+                        <td class="negative">-40%</td>
+                        <td class="negative">-42%</td>
+                        <td class="negative">-9%</td>
+                        <td>956</td>
+                        <td class="negative">266d</td>
+                    </tr>
+                    <tr>
+                        <td>BEEFEATEAR</td>
+                        <td>653,914</td>
+                        <td>720,820</td>
+                        <td>686,244</td>
+                        <td>329,397</td>
+                        <td>577,655</td>
+                        <td class="negative">-54%</td>
+                        <td class="negative">-52%</td>
+                        <td class="negative">-12%</td>
+                        <td>1,567</td>
+                        <td class="negative">254d</td>
+                    </tr>
+                    <tr>
+                        <td>JAEGERMEISTER</td>
+                        <td>632,151</td>
+                        <td>1,049,018</td>
+                        <td>889,566</td>
+                        <td>378,350</td>
+                        <td>711,111</td>
+                        <td class="negative">-64%</td>
+                        <td class="negative">-57%</td>
+                        <td class="positive">+13%</td>
+                        <td>1,032</td>
+                        <td class="warning">77d</td>
+                    </tr>
+                    <tr>
+                        <td>OLMECA</td>
+                        <td>201,510</td>
+                        <td>281,498</td>
+                        <td>409,899</td>
+                        <td>440,933</td>
+                        <td>377,440</td>
+                        <td class="positive">+57%</td>
+                        <td class="positive">+8%</td>
+                        <td class="positive">+87%</td>
+                        <td>1,630</td>
+                        <td class="warning">153d</td>
+                    </tr>
+                    <tr>
+                        <td>FLAMBOYANT</td>
+                        <td>156,755</td>
+                        <td>231,737</td>
+                        <td>490,001</td>
+                        <td>208,750</td>
+                        <td>437,379</td>
+                        <td class="negative">-10%</td>
+                        <td class="negative">-57%</td>
+                        <td class="positive">+179%</td>
+                        <td>214</td>
+                        <td class="negative">21d</td>
+                    </tr>
+                    <tr class="total-row">
+                        <td><strong>TOTAL</strong></td>
+                        <td><strong>22,414,740</strong></td>
+                        <td><strong>26,023,031</strong></td>
+                        <td><strong>30,054,689</strong></td>
+                        <td><strong>14,287,620</strong></td>
+                        <td><strong>22,828,894</strong></td>
+                        <td><strong class="negative">-45%</strong></td>
+                        <td><strong class="negative">-52%</strong></td>
+                        <td><strong class="positive">+2%</strong></td>
+                        <td><strong>117,327</strong></td>
+                        <td><strong>41d</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2 id="ciudades">2. PERFORMANCE POR CIUDAD</h2>
+        
+        <h3>PERFORMANCE POR CIUDAD - BOB</h3>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Ciudad</th>
+                        <th>Vendido 2024</th>
+                        <th>Ppto General</th>
+                        <th>SOP</th>
+                        <th>Avance 2025</th>
+                        <th>PY 2025</th>
+                        <th>AV25/PG</th>
+                        <th>AV25/SOP</th>
+                        <th>PY25/V24</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Cochabamba</td>
+                        <td>6,402,091</td>
+                        <td>7,525,155</td>
+                        <td>8,427,585</td>
+                        <td>3,789,780</td>
+                        <td>7,153,405</td>
+                        <td class="negative">-50%</td>
+                        <td class="negative">-55%</td>
+                        <td class="positive">+12%</td>
+                    </tr>
+                    <tr>
+                        <td>Santa Cruz</td>
+                        <td>5,710,293</td>
+                        <td>5,548,813</td>
+                        <td>9,011,358</td>
+                        <td>4,266,164</td>
+                        <td>7,572,062</td>
+                        <td class="negative">-23%</td>
+                        <td class="negative">-53%</td>
+                        <td class="positive">+33%</td>
+                    </tr>
+                    <tr>
+                        <td>La Paz</td>
+                        <td>4,385,748</td>
+                        <td>4,984,875</td>
+                        <td>5,188,860</td>
+                        <td>2,524,673</td>
+                        <td>3,330,635</td>
+                        <td class="negative">-49%</td>
+                        <td class="negative">-51%</td>
+                        <td class="negative">-24%</td>
+                    </tr>
+                    <tr>
+                        <td>El Alto</td>
+                        <td>2,208,720</td>
+                        <td>2,311,156</td>
+                        <td>2,754,963</td>
+                        <td>1,744,147</td>
+                        <td>2,288,682</td>
+                        <td class="negative">-25%</td>
+                        <td class="negative">-37%</td>
+                        <td class="positive">+4%</td>
+                    </tr>
+                    <tr>
+                        <td>Sucre</td>
+                        <td>1,106,138</td>
+                        <td>1,519,600</td>
+                        <td>1,536,565</td>
+                        <td>748,785</td>
+                        <td>1,088,654</td>
+                        <td class="negative">-51%</td>
+                        <td class="negative">-51%</td>
+                        <td class="negative">-2%</td>
+                    </tr>
+                    <tr>
+                        <td>Tarija</td>
+                        <td>1,074,400</td>
+                        <td>2,254,744</td>
+                        <td>1,590,938</td>
+                        <td>679,442</td>
+                        <td>1,206,580</td>
+                        <td class="negative">-70%</td>
+                        <td class="negative">-57%</td>
+                        <td class="positive">+12%</td>
+                    </tr>
+                    <tr>
+                        <td>Oruro</td>
+                        <td>969,566</td>
+                        <td>1,372,108</td>
+                        <td>899,000</td>
+                        <td>235,522</td>
+                        <td>899,000</td>
+                        <td class="negative">-83%</td>
+                        <td class="negative">-74%</td>
+                        <td class="negative">-7%</td>
+                    </tr>
+                    <tr>
+                        <td>Potosí</td>
+                        <td>358,244</td>
+                        <td>378,548</td>
+                        <td>557,959</td>
+                        <td>249,459</td>
+                        <td>138,876</td>
+                        <td class="negative">-34%</td>
+                        <td class="negative">-55%</td>
+                        <td class="negative">-61%</td>
+                    </tr>
+                    <tr class="total-row">
+                        <td><strong>TOTAL</strong></td>
+                        <td><strong>22,414,740</strong></td>
+                        <td><strong>26,023,031</strong></td>
+                        <td><strong>30,054,689</strong></td>
+                        <td><strong>14,287,620</strong></td>
+                        <td><strong>22,762,357</strong></td>
+                        <td><strong class="negative">-45%</strong></td>
+                        <td><strong class="negative">-52%</strong></td>
+                        <td><strong class="positive">+2%</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2 id="canales">3. PERFORMANCE POR CANAL</h2>
+        
+        <h3>PERFORMANCE POR CANAL - BOB</h3>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Canal</th>
+                        <th>Vendido 2024</th>
+                        <th>Ppto General</th>
+                        <th>SOP</th>
+                        <th>Avance 2025</th>
+                        <th>PY 2025</th>
+                        <th>AV25/PG</th>
+                        <th>AV25/SOP</th>
+                        <th>PY25/V24</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>MAYORISTAS</td>
+                        <td>10,066,374</td>
+                        <td>11,205,557</td>
+                        <td>11,752,108</td>
+                        <td>5,716,591</td>
+                        <td>11,077,473</td>
+                        <td class="negative">-49%</td>
+                        <td class="negative">-51%</td>
+                        <td class="positive">+10%</td>
+                    </tr>
+                    <tr>
+                        <td>NIGHT</td>
+                        <td>3,295,458</td>
+                        <td>4,745,080</td>
+                        <td>5,533,202</td>
+                        <td>2,096,250</td>
+                        <td>5,203,517</td>
+                        <td class="negative">-56%</td>
+                        <td class="negative">-62%</td>
+                        <td class="positive">+58%</td>
+                    </tr>
+                    <tr>
+                        <td>MODERNO</td>
+                        <td>2,609,261</td>
+                        <td>2,751,881</td>
+                        <td>3,038,852</td>
+                        <td>1,614,214</td>
+                        <td>2,861,958</td>
+                        <td class="negative">-41%</td>
+                        <td class="negative">-47%</td>
+                        <td class="positive">+10%</td>
+                    </tr>
+                    <tr>
+                        <td>LICORERIAS</td>
+                        <td>2,122,121</td>
+                        <td>2,565,691</td>
+                        <td>4,438,004</td>
+                        <td>2,081,775</td>
+                        <td>4,174,856</td>
+                        <td class="negative">-19%</td>
+                        <td class="negative">-53%</td>
+                        <td class="positive">+97%</td>
+                    </tr>
+                    <tr>
+                        <td>EVENTOS</td>
+                        <td>1,239,792</td>
+                        <td>1,352,069</td>
+                        <td>1,407,446</td>
+                        <td>848,673</td>
+                        <td>1,325,113</td>
+                        <td class="negative">-37%</td>
+                        <td class="negative">-40%</td>
+                        <td class="positive">+7%</td>
+                    </tr>
+                    <tr>
+                        <td>HORECA</td>
+                        <td>951,550</td>
+                        <td>1,082,873</td>
+                        <td>1,305,138</td>
+                        <td>626,431</td>
+                        <td>1,227,710</td>
+                        <td class="negative">-42%</td>
+                        <td class="negative">-52%</td>
+                        <td class="positive">+29%</td>
+                    </tr>
+                    <tr>
+                        <td>TDB</td>
+                        <td>912,236</td>
+                        <td>1,105,355</td>
+                        <td>1,272,212</td>
+                        <td>679,626</td>
+                        <td>1,196,279</td>
+                        <td class="negative">-39%</td>
+                        <td class="negative">-47%</td>
+                        <td class="positive">+31%</td>
+                    </tr>
+                    <tr>
+                        <td>TIENDAS PROPIAS</td>
+                        <td>756,780</td>
+                        <td>941,860</td>
+                        <td>987,213</td>
+                        <td>456,703</td>
+                        <td>929,780</td>
+                        <td class="negative">-52%</td>
+                        <td class="negative">-54%</td>
+                        <td class="positive">+23%</td>
+                    </tr>
+                    <tr class="total-row">
+                        <td><strong>TOTAL</strong></td>
+                        <td><strong>22,414,740</strong></td>
+                        <td><strong>26,023,031</strong></td>
+                        <td><strong>30,054,689</strong></td>
+                        <td><strong>14,287,620</strong></td>
+                        <td><strong>28,498,605</strong></td>
+                        <td><strong class="negative">-45%</strong></td>
+                        <td><strong class="negative">-52%</strong></td>
+                        <td><strong class="positive">+27%</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2 id="stock">4. ANÁLISIS DE STOCK Y COBERTURA</h2>
+        
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Marca</th>
+                        <th>Stock C9L</th>
+                        <th>Venta/Día</th>
+                        <th>Cobertura</th>
+                        <th>Estado</th>
+                        <th>Recomendación</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>STOLICHNAYA</td>
+                        <td>1,494</td>
+                        <td>3</td>
+                        <td class="negative">523d</td>
+                        <td>🔴 Crítico</td>
+                        <td>Suspender pedidos inmediatamente</td>
+                    </tr>
+                    <tr>
+                        <td>CHIVAS</td>
+                        <td>956</td>
+                        <td>4</td>
+                        <td class="negative">266d</td>
+                        <td>🔴 Crítico</td>
+                        <td>Activar promociones agresivas</td>
+                    </tr>
+                    <tr>
+                        <td>BEEFEATEAR</td>
+                        <td>1,567</td>
+                        <td>6</td>
+                        <td class="negative">254d</td>
+                        <td>⚠️ Alto</td>
+                        <td>Reducir pedidos 70%</td>
+                    </tr>
+                    <tr>
+                        <td>BRANCA</td>
+                        <td>31,652</td>
+                        <td>138</td>
+                        <td class="warning">230d</td>
+                        <td>⚠️ Alto</td>
+                        <td>Reducir pedidos y promocionar</td>
+                    </tr>
+                    <tr>
+                        <td>HAVANA</td>
+                        <td>23,381</td>
+                        <td>131</td>
+                        <td class="warning">179d</td>
+                        <td>⚠️ Alto</td>
+                        <td>Revisar proyecciones</td>
+                    </tr>
+                    <tr>
+                        <td>CAMPOS DE SOLANA</td>
+                        <td>16,944</td>
+                        <td>542</td>
+                        <td class="positive">31d</td>
+                        <td>✅ Óptimo</td>
+                        <td>Mantener niveles</td>
+                    </tr>
+                    <tr>
+                        <td>CASA REAL</td>
+                        <td>25,665</td>
+                        <td>843</td>
+                        <td class="positive">30d</td>
+                        <td>✅ Óptimo</td>
+                        <td>Mantener niveles</td>
+                    </tr>
+                    <tr>
+                        <td>REDBULL</td>
+                        <td>5,812</td>
+                        <td>204</td>
+                        <td class="positive">28d</td>
+                        <td>✅ Óptimo</td>
+                        <td>Mantener niveles</td>
+                    </tr>
+                    <tr>
+                        <td>FLAMBOYANT</td>
+                        <td>214</td>
+                        <td>10</td>
+                        <td class="negative">21d</td>
+                        <td>⚠️ Bajo</td>
+                        <td>Incrementar pedidos urgente</td>
+                    </tr>
+                    <tr>
+                        <td>37 LENGUAS</td>
+                        <td>2,183</td>
+                        <td>109</td>
+                        <td class="negative">20d</td>
+                        <td>⚠️ Bajo</td>
+                        <td>Evitar quiebre de stock</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2 id="resumen">5. RESUMEN EJECUTIVO</h2>
+        
+        <div class="executive-summary">
+            <div class="summary-card">
+                <h4>📊 AVANCE VS PPTO</h4>
+                <div class="value negative">-45%</div>
+                <div class="description">14.3M vs 26.0M objetivo</div>
+            </div>
+            
+            <div class="summary-card">
+                <h4>📈 VS AÑO ANTERIOR</h4>
+                <div class="value positive">+2%</div>
+                <div class="description">22.8M vs 22.4M (2024)</div>
+            </div>
+            
+            <div class="summary-card">
+                <h4>💰 PROYECCIÓN</h4>
+                <div class="value">22.8M</div>
+                <div class="description">BOB estimados sept.</div>
+            </div>
+            
+            <div class="summary-card">
+                <h4>📦 COBERTURA</h4>
+                <div class="value">41 días</div>
+                <div class="description">Promedio inventario</div>
+            </div>
+        </div>
+
+        <div class="alert-box alert-critical">
+            <h4>🔴 ALERTAS CRÍTICAS</h4>
+            <ul>
+                <li><strong>STOLICHNAYA:</strong> 523 días cobertura - Suspender pedidos</li>
+                <li><strong>CHIVAS:</strong> 266 días - Activar promociones urgentes</li>
+                <li><strong>JACK DANIELS:</strong> -98% vs 2024, ventas casi nulas</li>
+                <li><strong>ORURO:</strong> -83% vs presupuesto, intervención urgente</li>
+            </ul>
+        </div>
+
+        <div class="alert-box alert-warning">
+            <h4>⚠️ RIESGOS IDENTIFICADOS</h4>
+            <ul>
+                <li><strong>37 LENGUAS:</strong> 20 días cobertura - Riesgo quiebre</li>
+                <li><strong>FLAMBOYANT:</strong> 21 días - Reponer esta semana</li>
+                <li><strong>POTOSÍ:</strong> -61% vs proyección anterior</li>
+                <li><strong>TURISMO:</strong> -66% vs 2024, caída significativa</li>
+            </ul>
+        </div>
+
+        <div class="alert-box alert-success">
+            <h4>✅ MEJORES PERFORMERS</h4>
+            <ul>
+                <li><strong>OLMECA:</strong> +87% vs 2024</li>
+                <li><strong>REDBULL:</strong> +379% vs 2024</li>
+                <li><strong>37 LENGUAS:</strong> +632% vs 2024</li>
+                <li><strong>LICORERIAS:</strong> +97% crecimiento canal</li>
+            </ul>
+        </div>
+
+        <div class="footnotes">
+            <h4>📝 NOTAS</h4>
+            <ul>
+                <li>Cambio: 6.96 BOB/USD</li>
+                <li>Cobertura: Promedio 30 días</li>
+                <li>Datos al: 15/09/2025</li>
+            </ul>
+            <p style="margin-top: 15px; font-style: italic;">
+                Sistema BI - DYM Bolivia<br>
+                📧 Contacto: analisis@dym.bo
+            </p>
+        </div>
+    </div>
+
+    <!-- Botón de compartir -->
+    <button class="share-button" onclick="shareReport()">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m9.032 4.026a3 3 0 10-2.684-4.342m0 0a3 3 0 00-5.368 0m0 0a3 3 0 10-2.684 4.342" />
+        </svg>
+    </button>
+
+    <script>
+        // Navegación móvil
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+            
+            // Actualizar botón activo
+            document.querySelectorAll('.mobile-nav button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+        }
+
+        // Compartir reporte
+        async function shareReport() {
+            const shareData = {
+                title: 'WSR DYM - Septiembre 2025',
+                text: 'Weekly Sales Report - Semana 3',
+                url: window.location.href
+            };
+
+            try {
+                if (navigator.share) {
+                    await navigator.share(shareData);
+                } else {
+                    // Fallback: copiar URL
+                    navigator.clipboard.writeText(window.location.href);
+                    alert('Link copiado al portapapeles!');
+                }
+            } catch(err) {
+                console.log('Error al compartir:', err);
+            }
+        }
+
+        // Detectar scroll en tablas para ocultar indicador
+        document.querySelectorAll('.table-wrapper').forEach(wrapper => {
+            wrapper.addEventListener('scroll', function() {
+                if (this.scrollLeft > 10) {
+                    this.classList.add('scrolled');
+                }
+            });
+        });
+
+        // Auto-ocultar indicador después de primera interacción
+        setTimeout(() => {
+            document.querySelectorAll('.table-wrapper').forEach(wrapper => {
+                wrapper.style.setProperty('--show-indicator', 'none');
+            });
+        }, 5000);
+    </script>
+</body>
+</html>
